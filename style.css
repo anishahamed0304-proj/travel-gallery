@@ -1,0 +1,327 @@
+
+/* =====================================
+   1. BASIC RESET AND BODY STYLING
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #FAF8FC;
+    color: #333;
+}
+
+
+/* =====================================
+   2. MAIN PAGE GRID LAYOUT
+===================================== */
+
+.page {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+
+    /* Mobile: one column */
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   3. HEADER STYLING
+===================================== */
+
+.header {
+    grid-area: header;
+    background-color: #5B2A86;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.header h1 {
+    font-size: 6vw;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #F6F0FA;
+}
+
+
+/* =====================================
+   4. SIDEBAR STYLING
+===================================== */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #F6F0FA;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.sidebar h2 {
+    color: #5B2A86;
+    margin-bottom: 0.3rem;
+}
+
+.sidebar > p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.sidebar li {
+    margin-bottom: 0.7rem;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #5B2A86;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #5B2A86;
+    color: white;
+}
+
+.sidebar-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-left: 4px solid #F26B21;
+    border-radius: 0.4rem;
+}
+
+.sidebar-note h3 {
+    color: #5B2A86;
+    margin-bottom: 0.4rem;
+}
+
+
+/* =====================================
+   5. GALLERY GRID
+===================================== */
+
+.gallery {
+    grid-area: main;
+
+    display: grid;
+    gap: 1rem;
+
+    /* Mobile: one column */
+    grid-template-columns: minmax(0, 1fr);
+}
+
+
+/* =====================================
+   6. DESTINATION CARDS
+===================================== */
+
+.card {
+    background-color: #F26B21;
+    color: white;
+
+    padding: 2em;
+    border-radius: 0.5rem;
+    min-height: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow-wrap: anywhere;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Destination category label */
+
+.category {
+    display: inline-block;
+    align-self: flex-start;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+
+    padding: 0.3rem 0.7rem;
+    border-radius: 2rem;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+
+/* Best time to visit */
+
+.best-time {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+
+/* Featured Goa card */
+
+.featured {
+    background-color: #5B2A86;
+}
+
+
+/* =====================================
+   7. FOOTER STYLING
+===================================== */
+
+.footer {
+    grid-area: footer;
+
+    background-color: #333;
+    color: white;
+
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.footer h3 {
+    margin-bottom: 0.3rem;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+
+/* =====================================
+   8. TABLET RESPONSIVE DESIGN
+   601px and above
+===================================== */
+
+@media (min-width: 601px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+}
+
+
+/* =====================================
+   9. DESKTOP RESPONSIVE DESIGN
+   993px and above
+===================================== */
+
+@media (min-width: 993px) {
+
+    .page {
+        grid-template-columns: 15rem minmax(0, 1fr);
+
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Featured destination covers two columns */
+
+    .featured {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* =====================================
+   10. SMALL MOBILE SCREEN IMPROVEMENTS
+===================================== */
+
+@media (max-width: 400px) {
+
+    .page {
+        padding: 0.6rem;
+        gap: 0.7rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 8vw;
+    }
+
+    .card {
+        padding: 1.3rem;
+    }
+
+    .sidebar {
+        padding: 1rem;
+    }
+
+}
+
+
+/* =====================================
+   11. ACCESSIBILITY IMPROVEMENT
+===================================== */
+
+.sidebar a:focus-visible {
+    outline: 3px solid #F26B21;
+    outline-offset: 3px;
+}
