@@ -10,8 +10,7 @@ The project demonstrates the practical implementation of CSS Grid, responsive la
 
 ## Project Preview
 
-<!-- Add your project screenshot here -->
-<!-- Example: ![Travel Gallery Preview](screenshots/travel-gallery.png) -->
+![Travel Gallery Responsive Preview](screenshots/travelgallery2.png)mple: ![Travel Gallery Preview](screenshots/travel-gallery.png) -->
 
 ---
 
